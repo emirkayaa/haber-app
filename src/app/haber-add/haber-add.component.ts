@@ -23,6 +23,7 @@ export class HaberAddComponent implements OnInit {
     this.haberAddForm = this.formBuilder.group({
       name: ['', Validators.required],
       description: ['', Validators.required],
+      category: ['', Validators.required],
       imageUrl: ['', Validators.required],
       owner: ['', Validators.required],
     });
