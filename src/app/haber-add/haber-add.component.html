@@ -1,0 +1,59 @@
+<div>
+    <div>
+        <div>
+            <app-navbar></app-navbar>
+        </div>
+        <div class="flex justify-center">
+            <img src="https://www.belkaas.com.tr/koalaroo/2021/04/22a73f58e06e4979827002c9463e196d.png" alt="TRT">
+        </div>
+        <form [formGroup]="haberAddForm"  (ngSubmit)="haberAdd()" class="px-10 bg-white shadow-lg m-5 rounded-xl py-10">
+          <div class="grid grid-cols-12 space-x-3">
+            <div class="mb-6 col-span-6">
+                <label class="block text-gray-700 text-sm font-bold mb-2" >
+                  Haber Başlığı:
+                </label>
+                <input name="name" formControlName="name" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" type="text" placeholder="Haber Başlığı">
+            </div>
+            <div class="mb-6 col-span-6">
+                <label class="block text-gray-700 text-sm font-bold mb-2" >
+                  Haber Resmi:
+                </label>
+                <input name="imageUrl" formControlName="imageUrl" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="imageUrl" type="text" placeholder="Haber Resim URL">
+            </div>
+          </div>
+           <div class="grid grid-cols-12 space-x-3">
+           
+            <div class="mb-6 col-span-6">
+                <label class="block text-gray-700 text-sm font-bold mb-2" >
+                  Haber İçeriği:
+                </label>
+                <textarea name="description" formControlName="description" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="description" type="text" placeholder="Haber İçeriği"></textarea>
+            </div>
+            <div class="mb-6 col-span-6">
+                <label class="block text-gray-700 text-sm font-bold mb-2" >
+                  Haber Sahibi:
+                </label>
+                <input name="owner" formControlName="owner" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="owner" type="text" placeholder="Haber Sahibi">
+              </div>
+           </div>
+           <div>
+            <div class="grid grid-cols-12 space-x-3">
+               <div class="col-span-6">
+                <label> Haber Kategorisi:</label>
+                <select class="">
+                    <option value="1">Eğlence</option>
+                    <option value="2">Spor</option>
+                    <option value="3">Teknoloji</option>
+                    <option value="4">Sağlık</option>
+                </select>
+               </div>
+               <div class="col-span-6">
+                <button type="submit" [disabled]="!haberAddForm.valid" >
+                    <a class="btn bg-blue-500 hover:bg-blue-700 p-3 rounded-md text-white font-semibold">Haber Ekle</a>
+                </button>
+               </div>
+            </div>
+           </div>
+        </form>
+    </div>
+</div>

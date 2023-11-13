@@ -1,0 +1,102 @@
+<div>
+  <div>
+    <div class="sticky top-0">
+      <app-navbar></app-navbar>
+    </div>
+
+    <div>
+      <div>
+        <div class="mt-3 flex justify-center">
+          <img
+            class="rounded-xl"
+            src="https://tpc.googlesyndication.com/simgad/5489166272551486096"
+            alt=""
+          />
+        </div>
+      </div>
+
+      <!--Scroll Data-->
+      <div class="flex justify-center mt-4">
+        <div>
+          <div class="max-w-6xl max-2xl:max-w-6xl max-sm:max-w-sm rounded-xl max-xs:max-w-xs bg-slate-50 shadow-lg p-4">
+            <div class="flex justify-between items-center">
+              <p class="text-xl font-bold">Güncel Haberler</p>
+              <p class="text-xl font-bold text-nowrap">Ne Oldu?</p>
+            </div>
+            <div *ngIf="getDatas && getDatas.length > 0 && getDatas[0]?.articles" class="flex overflow-auto">
+              <div *ngFor="let article of getDatas[0]?.articles">
+                <div class="max-w-sm rounded overflow-hidden">
+                  <img
+                    class="w-full p-2 rounded-xl object-cover"
+                    src="https://www.huaweiailesi.com/wp-content/uploads/2021/07/share.png"
+                    alt="Card Image"
+                  />
+                  <div class="px-6 py-4">
+                    <div class="font-normal text-xl mb-2 truncate">
+                      <a [href]="article.url">
+                        {{ article.title }}
+                      </a>
+                    </div>
+                    <p class="text-gray-700 text-base font-bold">
+                      {{ article.author }}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div *ngIf="getDatas && getDatas.length === 0">
+              Veri bulunamadı.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-12 mt-10 gap-4 m-3">
+      <!-- Birinci Sütun (8 kolon genişliğinde) -->
+      <div class="col-span-12 sm:col-span-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div *ngFor="let article of getDatas[0].articles" class="min-h-max max-w-sm rounded overflow-hidden shadow-lg bg-slate-50 mb-4">
+            <img
+              class="w-full p-2 rounded-xl"
+              src="https://www.huaweiailesi.com/wp-content/uploads/2021/07/share.png"
+              alt="Card Image"
+            />
+            <div class="px-6 py-4">
+              <div class="font-bold text-xl mb-2">
+                <a [href]="article.url" [title]="article.title" >{{ article.title }}</a>
+              </div>
+              <div class="text-end">
+                <span class="bg-indigo-100 text-indigo-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-indigo-900 dark:text-indigo-300">{{ article.author }}</span>
+              </div>
+              <p class="text-gray-700 text-base font-normal truncate mt-2">{{ article.title }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <!-- İkinci Sütun (4 kolon genişliğinde, orta ekran ve üstü) -->
+      <div class="col-span-12 sm:col-span-4 md:col-span-4">
+        <div class="max-h-[800px] rounded-xl overflow-auto bg-slate-50 shadow-lg">
+          <div class="p-8">
+            <p class="text-2xl font-bold">Popüler</p>
+          <div> <!-- sticky top-0 -->
+            <div *ngFor="let article of getDatas[0].articles" class=" rounded overflow-hidden mb-4">
+              <div class="py-4">
+                <p class="text-gray-700 text-base font-normal">{{ article.author }}</p>
+                <div class="font-bold text-xl mb-2 ">
+                  <a class="">{{ article.title }}</a>
+                </div>
+              </div>
+              <div class="border-t border-gray-300 mx-6 my-4"></div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <app-footer></app-footer>
+    </div>
+  </div>
+</div>

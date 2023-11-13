@@ -1,0 +1,31 @@
+<div class="bg-white dark:bg-gray-900 p-4">
+    <nav >
+      <div class="text-black flex justify-between items-center">
+        <a routerLink="/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/TRT_Haber_Eyl%C3%BCl_2020_Logo.svg/2560px-TRT_Haber_Eyl%C3%BCl_2020_Logo.svg.png" width="200px" alt=""></a>
+        <div class="hidden md:flex justify-items-center space-x-4 font-semibold font-serif">
+          <a routerLink="/home" >Anasayfa</a>
+          <a [routerLink]="['/category', 'entertainment']" >Eğlence</a>
+          <a [routerLink]="['/category', 'business']" >İş/Ticaret</a>
+          <a [routerLink]="['/category', 'sports']">Spor</a>
+        </div>
+        <div class="flex items-center space-x-2">
+          <a routerLink="/haber-add">
+            <svg  width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="black">
+              <path d="M13 4h-2v7H4v2h7v7h2v-7h7v-2h-7V4z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+     
+      <div class="flex space-x-2 items-center"> 
+        
+      </div>
+      <div class="md:hidden">
+        <button id="navbar-toggle" class="text-white">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </div>
